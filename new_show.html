@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>鸿丰集团-新闻中心</title>
+	<link href="image/logo.jpg" type="image/x-icon" rel="icon"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body style="background-color: #f0f0f0">
+	<!--<div id='scroll'></div>-->
+	<header>
+		<div class='header'>
+			<div class='header_left'>
+				<a href='index.html'><img data-src='image/logo.svg'/></a>
+			</div>
+			<div class='header_right'>
+				<ul>
+					<a href="recruitment.html"><li>诚聘英才</li></a>
+					<a href='contact.html'><li>征求合作</li></a>
+					<a href='new_show.html' class="header_right_hover"><li class="header_right_ul_li">
+						新闻中心
+						<!-- <div class="header_right_list">
+							<span onclick="location.href='new_show.html'">展会</span>
+							<span onclick="location.href='news.html'">新产品</span>
+						</div> -->
+					</li></a>
+					<a href="product.html"><li>产品设备</li></a>
+					<a href='index.html'><li>网站首页</li></a>
+				</ul>
+			</div>
+			<div style='clear: both'></div>
+		</div>
+	</header>
+	<div class='headers'></div>
+	<div class="news_home">
+		<div class="news_body" id="news_body">
+			<!-- location.href='new_detail.html?id=datas.newsid' -->
+			<div class="news_body_list" v-for="datas in s_data" v-on:click="location.href='new_detail.html?id='+datas.newsid">
+				<div class="news_body_list_left">
+					<img v-bind:src="datas.url" />
+				</div>
+				<div class="news_body_list_right">
+					<h4>{{datas.title}}</h4>
+					<span>{{datas.content}}<span style="display: none;">...</span></span>
+					<p>{{datas.createTime}}</p>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+			<!-- <div class="news_body_list" onclick="location.href='news_2018.html'">
+				<div class="news_body_list_left">
+					<img data-src="image/news/zhanhui/2018shanghai/001.jpg" />
+				</div>
+				<div class="news_body_list_right">
+					<h4>2018上海自动售货设备展</h4>
+					<span>2018上海自动售货设备展会现场<span style="display: none;">...</span></span>
+					<p>2018-5-26到2018-5-28</p>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+			<div class="news_body_list" onclick="location.href='news_2017.html'">
+				<div class="news_body_list_left">
+					<img data-src="image/news/zhanhui/2017yiwu/001.jpg" />
+				</div>
+				<div class="news_body_list_right">
+					<h4>2017第十四届中国国际自助服务产品及自动售货系统展览会</h4>
+					<span>中国义乌国际装备博览会<span style="display: none;">...</span></span>
+					<p>2017-11-18到2017-11-22</p>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+			<div class="news_body_list" onclick="location.href='news_2017b.html'">
+				<div class="news_body_list_left">
+					<img data-src="image/news/zhanhui/2017nanjing/001.jpg" />
+				</div>
+				<div class="news_body_list_right">
+					<h4>南京国际博览会议中心 台湾精品展览会</h4>
+					<span>南京国际博览会议中心 台湾精品展览会现场<span style="display: none;">...</span></span>
+					<p>2017-11-07</p>
+				</div>
+				<div style="clear: both"></div>
+			</div> -->
+		</div>
+		<div class="news_sidebar">
+			<div class="news_sidebar_head">
+				<input type="text" placeholder="请输入搜索内容"/>
+				<span></span>
+				<div style="clear: both;"></div>
+			</div>
+			<div class="news_sidebar_foor">
+				<p>为你推荐</p>
+				<ul>
+				</ul>
+			</div>
+		</div>
+		<div style='clear: both'></div>
+	</div>
+	<script type="text/javascript" src="js/footer.js"></script>
+	<script type="text/javascript">
+		function d(id){
+			return document.getElementById(id);
+		}
+		function c(cls){
+			return document.getElementsByClassName(cls);
+		}
+		function n(name){
+			return document.getElementsByTagName(name);
+		}
+		var header = n('header');
+		var footer = n('footer');
+		var home = n('news_home');
+
+		function timestampToTime(timestamp) {
+	        var date = new Date(timestamp);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+	        Y = date.getFullYear() + '-';
+	        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+	        D = date.getDate() + ' ';
+	        return Y+M+D;
+	    }
+
+		function removeHTMLTag(str) {
+		            str = str.replace(/<\/?[^>]*>/g,''); //去除HTML tag
+		            str = str.replace(/[ | ]*\n/g,'\n'); //去除行尾空白
+		            str = str.replace(/\n[\s| | ]*\r/g,'\n'); //去除多余空行
+		            str=str.replace(/&nbsp;/ig,'');//去掉&nbsp;
+		            str=str.replace(/\s/g,''); //将空格去掉
+		            return str;
+		}
+
+		var s_data;
+		$.ajax({
+			type: 'post',
+			url: 'http://test.hontech-rdcenter.com:8080/bg-uc/news/getNews.json',
+			data: {},
+			async: false,
+			success: function(data){
+				for(var i = 0; i < data.length; i++){
+					data[i].createTime = timestampToTime(data[i].createTime.time);
+					data[i].content = removeHTMLTag(data[i].content);
+				}
+
+				s_data = data;
+				var vm = new Vue({
+					el: '#news_body',
+					data: s_data,
+				})
+			}
+		})
+
+		$.ajax({
+			type: 'post',
+			url: 'http://test.hontech-rdcenter.com:8080/bg-uc/news/recommend.json',
+			data: {},
+			dataType: 'json',
+			success: function(msg){
+				var ul = c('news_sidebar_foor')[0].children[1];
+				for(var i = 0; i < msg.length; i++){
+					var li = document.createElement('li');
+					li.innerHTML = msg[i].title;
+					(function(q){
+						li.onclick = function(){location.href = 'new_detail.html?id=' + msg[q].newsid};
+					})(i)
+					ul.append(li);
+				}
+			}
+		})
+
+		//;
+		var seach = c('news_sidebar_head')[0];
+
+		seach.children[1].onclick = function(){
+			var input = c('news_sidebar_head')[0].children[0].value;
+			var list_length = c('news_body_list').length;
+			if(input == ""){
+				alert("搜索内容不能为空！");
+			}else{
+				$.ajax({
+					type: 'post',
+					url: 'http://test.hontech-rdcenter.com:8080/bg-uc/news/hit.json',
+					data: {
+						title: input
+					},
+					dataType: 'json',
+					success: function(obj){
+						var body = d('news_body');
+						var list = c('news_body_list');
+
+						if(obj != ''){
+							for(var j = 0; j < list_length; j++){
+								body.removeChild(list[0]);
+							}
+							for(var i = 0; i < obj.length; i++){
+								obj[i].createTime = timestampToTime(obj[i].createTime.time);
+								obj[i].content = removeHTMLTag(obj[i].content);
+								var new_list = document.createElement('div');
+								var new_list_left = document.createElement('div');
+								var new_list_left_img = document.createElement('img');
+								var new_list_right = document.createElement('div');
+								var new_list_right_h4 = document.createElement('h4');
+								var new_list_right_span = document.createElement('span');
+								var new_list_right_s_span = document.createElement('span');
+								var new_list_right_p = document.createElement('p');
+								var new_list_clear = document.createElement('div');
+								new_list_clear.style.clear = "both";
+								new_list_left.className = 'news_body_list_left';
+								new_list_left_img.src = obj[i].url;
+								new_list_left.append(new_list_left_img);
+								new_list_right.className = 'news_body_list_right';
+								new_list_right_h4.innerHTML = obj[i].title;
+								new_list_right_s_span.style.display = 'none';
+								new_list_right_s_span.innerHTML = '...';
+								new_list_right_span.innerHTML =  obj[i].content;
+								new_list_right_span.append(new_list_right_s_span);
+								new_list_right_p.innerHTML = obj[i].createTime;
+								new_list_right.append(new_list_right_h4);
+								new_list_right.append(new_list_right_span);
+								new_list_right.append(new_list_right_p);
+								new_list.className = 'news_body_list';
+								new_list.append(new_list_left);
+								new_list.append(new_list_right);
+								new_list.append(new_list_clear);
+								(function(q){
+									new_list.onclick = function(){
+										location.href = 'new_detail.html?id=' + obj[q].newsid;
+									}
+								})(i)
+								body.append(new_list);
+								if((home[0].offsetHeight + header[0].offsetHeight + footer[0].offsetHeight) < window.innerHeight){
+									footer[0].style.position = 'absolute';
+									footer[0].style.bottom = '0px';
+									footer[0].style.left = '0px';
+								}
+							}
+						}else{
+							alert('搜索的内容不存在!');
+						}
+					},
+					error: function(XML, text, error){
+						console.log(XML);
+						console.log(text);
+						console.log(error);
+					}
+				})
+			};
+
+
+
+			
+		}
+		window.onkeydown = function(e){
+			if(e.key == 'Enter'){
+				var input = c('news_sidebar_head')[0].children[0].value;
+				var list_length = c('news_body_list').length;
+				if(input == ""){
+					alert("搜索内容不能为空！");
+				}else{
+					$.ajax({
+						type: 'post',
+						url: 'http://test.hontech-rdcenter.com:8080/bg-uc/news/hit.json',
+						data: {
+							title: input
+						},
+						dataType: 'json',
+						success: function(obj){
+							var body = d('news_body');
+							var list = c('news_body_list');
+
+							if(obj != ''){
+								for(var j = 0; j < list_length; j++){
+									body.removeChild(list[0]);
+								}
+								for(var i = 0; i < obj.length; i++){
+									obj[i].createTime = timestampToTime(obj[i].createTime.time);
+									obj[i].content = removeHTMLTag(obj[i].content);
+									var new_list = document.createElement('div');
+									var new_list_left = document.createElement('div');
+									var new_list_left_img = document.createElement('img');
+									var new_list_right = document.createElement('div');
+									var new_list_right_h4 = document.createElement('h4');
+									var new_list_right_span = document.createElement('span');
+									var new_list_right_s_span = document.createElement('span');
+									var new_list_right_p = document.createElement('p');
+									var new_list_clear = document.createElement('div');
+									new_list_clear.style.clear = "both";
+									new_list_left.className = 'news_body_list_left';
+									new_list_left_img.src = obj[i].url;
+									new_list_left.append(new_list_left_img);
+									new_list_right.className = 'news_body_list_right';
+									new_list_right_h4.innerHTML = obj[i].title;
+									new_list_right_s_span.style.display = 'none';
+									new_list_right_s_span.innerHTML = '...';
+									new_list_right_span.innerHTML =  obj[i].content;
+									new_list_right_span.append(new_list_right_s_span);
+									new_list_right_p.innerHTML = obj[i].createTime;
+									new_list_right.append(new_list_right_h4);
+									new_list_right.append(new_list_right_span);
+									new_list_right.append(new_list_right_p);
+									new_list.className = 'news_body_list';
+									new_list.append(new_list_left);
+									new_list.append(new_list_right);
+									new_list.append(new_list_clear);
+									(function(q){
+										new_list.onclick = function(){
+											location.href = 'new_detail.html?id=' + obj[q].newsid;
+										}
+									})(i)
+									body.append(new_list);
+									if((home[0].offsetHeight + header[0].offsetHeight + footer[0].offsetHeight) < window.innerHeight){
+										footer[0].style.position = 'absolute';
+										footer[0].style.bottom = '0px';
+										footer[0].style.left = '0px';
+									}
+								}
+							}else{
+								alert('搜索的内容不存在!');
+							}
+						}
+					})
+				};
+			}
+		}
+	</script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

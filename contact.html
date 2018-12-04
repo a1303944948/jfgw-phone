@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>浙江嘉丰-联系我们</title>
+	<link href="image/logo.jpg" type="image/x-icon" rel="icon"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=4RDLgOtFNgr92tZrh0lDrM2yn9tWHP28"></script>
+</head>
+<body>
+	<header>
+		<div class='header'>
+			<div class='header_left'>
+				<a href='index.html'><img data-src='image/logo.svg'/></a>
+			</div>
+			<div class='header_right'>
+				<ul>
+					<a href="recruitment.html"><li>诚聘英才</li></a>
+					<a href='contact.html'><li class='header_right_ul_li'>征求合作</li></a>
+					<a href='new_show.html' class="header_right_hover"><li>
+						新闻中心
+						<!-- <div class="header_right_list">
+							<span onclick="location.href='new_show.html'">展会</span>
+							<span onclick="location.href='news.html'">新产品</span>
+						</div> -->
+					</li></a>
+					<a href="product.html"><li>产品设备</li></a>
+					<a href='index.html'><li>网站首页</li></a>
+				</ul>
+			</div>
+			<div style='clear: both'></div>
+		</div>
+	</header>
+	<div class='headers'></div>
+	<p class="contact">征求合作</p>
+	<div class="contact_head">
+		<p style="color: #0D6FB8;">征求，武汉、广州、深圳、重庆、成都、杭州、苏州、长沙、南京等地区合作厂商<br/>
+		以经营自动贩卖机，团膳，中央厨房有经验者，能在各地推广以自动贩卖机方式贩卖盒饭，冰淇淋，或百货等产品，具有机电、电脑维修能力者(本公司提供免费培训)本公司自动盒饭机为全国发明专利产品，可以冷藏并微波加热，瞬间出餐，适合学校，医院，办公楼，旅游景区，展会，游乐场所，网吧等地方。<br/>
+		同时配有冰淇淋机，百货机等同时置放。<br/><br/></p>
+
+		有意愿者的人请联络本公司<br/>
+		眭振辉    华东地区13575336233<br/>
+		李宜浩    华南地区18122925886<br/><br/>
+
+		本公司将于9月份陆续于各合作地区，开始新机展示推广，各地区仅限一至二名代理（视区域大小），请尽速联络本公司人员联系。
+
+	</div>
+	<p class="contact">我们的位置<span>(点击相应标注呈现相关信息)</span></p>
+	<div id="contact">
+	</div>
+	<div class="contact_btn">初始化地图</div>
+	<script type="text/javascript">
+		function d(id){
+			return document.getElementById(id);
+		}
+		function c(cls){
+			return document.getElementsByClassName(cls);
+		}
+		function n(name){
+			return document.getElementsByTagName(name);
+		}
+
+		//百度地图
+		var map = new BMap.Map("contact");	//创建一个地图实例
+
+		var point = new BMap.Point(120.893569,30.827302); //创建地图的中心点坐标
+
+		map.enableScrollWheelZoom(true);	//开启鼠标滚轮缩放
+		map.centerAndZoom(point, 6);		//地图初始化并且设置地图打开时的初始级别
+
+		map.addControl(new BMap.NavigationControl()); //向地图添加平移缩放
+		map.addControl(new BMap.OverviewMapControl());//向地图添加缩略地图
+		map.addControl(new BMap.ScaleControl()); 	  //向地图添加比例尺
+		map.addControl(new BMap.MapTypeControl()); 	  //向地图添加地图类型
+		map.addControl(new BMap.CopyrightControl());  //向地图添加版权
+
+		var marker = new BMap.Marker(point);        // 创建标注    
+		map.addOverlay(marker);                     // 将标注添加到地图中
+		marker.setAnimation(BMAP_ANIMATION_BOUNCE); //让标注跳动
+
+		var points = new BMap.Point(113.874842,23.023623); //创建地图的中心点坐标
+		var markers = new BMap.Marker(points);        // 创建标注    
+		map.addOverlay(markers);                     // 将标注添加到地图中
+		markers.setAnimation(BMAP_ANIMATION_BOUNCE); //让标注跳动
+
+		var opts = {    
+		    width : 250,     // 信息窗口宽度
+		    height: 160,     // 信息窗口高度
+		    offset: {height: -25,width: 0},	//修改信息窗口的位置
+		    title : "<p style='color: #0D6FB8; text-align: center; font-size: 18px;'>鸿丰产品研发中心</p><p style='color: #0D6FB8; text-align: center; font-size: 18px;'>浙江嘉丰机电有限公司</p><p style='color: #333333; font-size: 14px; text-align: center; margin-top: 5px; margin-bottom: 5px;'>扶承碧：13758333226</p><p style='color: #333333; text-align: center; font-size: 14px; margin-top: 5px; margin-bottom: 5px;'>眭振辉：13575336233</p><span style='color: #666666; font-size: 14px;'>公司地址：浙江省嘉兴市嘉善县罗星街<br/>道金秀路128号</span>", // 信息窗口标题//
+		}    
+		var infoWindow = new BMap.InfoWindow("", opts);  // 创建信息窗口对象 
+			map.openInfoWindow(infoWindow, point);  // 打开信息窗口
+
+		//点击标注弹出信息窗口
+		marker.onclick = function(){
+			map.openInfoWindow(infoWindow, point);      // 打开信息窗口
+		}
+
+		var optss = {    
+		    width : 250,     // 信息窗口宽度
+		    height: 140,     // 信息窗口高度
+		    offset: {height: -25,width: 0},	//修改信息窗口的位置
+		    title : "<p style='color: #0D6FB8; text-align: center; font-size: 18px;'>东莞嘉丰机电设备有限公司</p><p style='color: #333333; text-align: center; font-size: 14px; margin-top: 5px; margin-bottom: 5px;'>段咏杰：13925839165</p><p style='color: #333333; text-align: center; font-size: 14px; margin-top: 5px; margin-bottom: 5px;'>李宜浩：13532460666</p><span style='color: #666666; font-size: 14px;'>公司地址：东莞市寮步镇华南工业城金<br/>富路7号523400</span>", // 信息窗口标题//
+		}
+		var infoWindows = new BMap.InfoWindow("", optss);  // 创建信息窗口对象 
+
+		//点击标注弹出信息窗口
+		markers.onclick = function(){
+			map.openInfoWindow(infoWindows, points);      // 打开信息窗口
+		}
+
+		//初始化地图按钮
+		c('contact_btn')[0].onclick = function(){		
+			map.centerAndZoom(point, 6);		//地图初始化并且设置地图打开时的初始级别
+			map.openInfoWindow(infoWindow, point);  // 打开信息窗口
+		}
+	</script>
+	<script type="text/javascript" src="js/footer.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

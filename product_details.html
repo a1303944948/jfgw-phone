@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>产品详情</title>
+	<link href="image/logo.jpg" type="image/x-icon" rel="icon"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="js/database.js"></script>
+<body>
+	<!--<div id="scroll"></div>-->
+	<header>
+		<div class="header">
+			<div class="header_left">
+				<a href="index.html"><img data-src="image/logo.svg"/></a>
+			</div>
+			<div class="header_right">
+				<ul>
+					<a href="recruitment.html"><li>诚聘英才</li></a>
+					<a href="contact.html"><li>征求合作</li></a>
+					<a href='new_show.html' class="header_right_hover"><li>
+						新闻中心
+						<!-- <div class="header_right_list">
+							<span onclick="location.href='new_show.html'">展会</span>
+							<span onclick="location.href='news.html'">新产品</span>
+						</div> -->
+					</li></a>
+					<a href="product.html"><li class="header_right_ul_li">产品设备</li></a>
+					<a href="index.html"><li>网站首页</li></a>
+				</ul>
+			</div>
+			<div style="clear: both"></div>
+		</div>
+	</header>
+	<div class="headers"></div>
+	<img class="product_details_banner"/>
+	<div class="product_details_home">
+		<table class="product_details_home_table">
+		</table>
+		<img class="product_details_home_img"/>
+	</div>
+	<p id="product_details_video_tip" style="text-align: center; color: #21980A;">如果无法自动播放，请按f5刷新页面即可自动播放</p>
+	<div class="product_details_video">
+		<video id="product_details_video_video" autoplay="autoplay" loop="loop">
+			<!-- <source data-src="image/jn.Ogg" type="video/ogg" />
+  			<source data-src="image/jn.webm" type="video/webm" /> -->
+		</video>
+	</div>
+	<!--<div class="product_details_body">-->
+		<!--<p>当前浏览： 金牛座自助售货机</p>
+		<div class="product_deetails_body_list">
+			<img data-src="image/jnz.jpg"/>
+			<!--<img data-src="image/shj2.png"/>
+			<img data-src="image/shj3.png"/>
+			<p>金牛座A001</p>
+			<span>特点：出货速度快，适用于较急切的客户！</span>
+			<!-- <div class="product_deetails_body_list_btn">
+				<b>1</b>
+				<b>2</b>
+				<b>3</b>
+			</div>
+		</div> -->
+		<!--<div class="product_deetails_body_list">
+			<img data-src="image/szz.jpg"/>
+			<!--<img data-src="image/shj3.png"/>
+			<img data-src="image/shj1.png"/>-->
+			<!--<p>金牛座A002</p>
+			<span>特点：食品质量最优，适用于大多数客户！</span>
+			<!-- <div class="product_deetails_body_list_btn">
+				<b>1</b>
+				<b>2</b>
+				<b>3</b>
+			</div> -->
+		<!--</div>
+		<div class="product_deetails_body_list">
+			<img data-src="image/byz.jpg"/>
+			<!--<img data-src="image/shj1.png"/>
+			<img data-src="image/shj2.png"/>-->
+			<!--<p>金牛座A003</p>
+			<span>特点：出货速度较快，食品质量最优，适用于所有客户！</span>
+			<!-- <div class="product_deetails_body_list_btn">
+				<b>1</b>
+				<b>2</b>
+				<b>3</b>
+			</div> -->
+		<!--</div>
+		<div class="product_deetails_body_list">
+			<img data-src="image/jnz.jpg"/>
+			<!--<img data-src="image/shj2.png"/>
+			<img data-src="image/shj3.png"/>-->
+			<!--<p>金牛座B001</p>
+			<span>特点：出货速度快，适用于较急切的客户！</span>
+			<!-- <div class="product_deetails_body_list_btn">
+				<b>1</b>
+				<b>2</b>
+				<b>3</b>
+			</div> -->
+		<!--</div>
+		<div class="product_deetails_body_list">
+			<img data-src="image/szz.jpg"/>
+			<!--<img data-src="image/shj3.png"/>
+			<img data-src="image/shj1.png"/>-->
+			<!--<p>金牛座B002</p>
+			<span>特点：食品质量最优，适用于大多数客户！</span>
+			<!-- <div class="product_deetails_body_list_btn">
+				<b>1</b>
+				<b>2</b>
+				<b>3</b>
+			</div> -->
+		<!--</div>
+		<div class="product_deetails_body_list">
+			<img data-src="image/byz.jpg"/>
+			<!--<img data-src="image/shj1.png"/>
+			<img data-src="image/shj2.png"/>-->
+			<!--<p>金牛座B003</p>
+			<span>特点：出货速度较快，食品质量最优，适用于所有客户！</span>
+			<!-- <div class="product_deetails_body_list_btn">
+				<b>1</b>
+				<b>2</b>
+				<b>3</b>
+			</div> -->
+		<!--</div>-->
+		<!--<div style="clear: both;"></div>
+	</div>-->
+	<script type="text/javascript" src="js/footer.js"></script>
+	<script type="text/javascript">
+		function d(id){
+			return document.getElementById(id);
+		}
+		function c(cls){
+			return document.getElementsByClassName(cls);
+		}
+		function n(name){
+			return document.getElementsByTagName(name);
+		}
+		function GetQueryString(name){
+			var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+			if(r!=null)return  unescape(r[2]); return null;
+	    }
+		/*$('.product_deetails_body_list>img:first-child').show();
+		$('.product_deetails_body_list_btn>b').hover(function(){
+			var js = $(this).index();
+			$(this).css({
+				'background':'linear-gradient(360deg, #3594DC, #65BAFA)',
+				'color': '#ffffff'
+			}).siblings().css({
+				'background':'#ffffff',
+				'color':'#55565A'
+			});
+			var img = $(this).parent().parent().children('img');
+			if(js == 0){
+				img.eq(0).show();
+				img.eq(1).hide();
+				img.eq(2).hide();
+			}else if(js == 1){
+				img.eq(1).show();
+				img.eq(0).hide();
+				img.eq(2).hide();
+			}else{
+				img.eq(2).show();
+				img.eq(0).hide();
+				img.eq(1).hide();
+			}
+		})*/
+
+
+		/*表格数据处理*/
+		var commoid = parseInt(GetQueryString('commoid'));
+		function commostart(obj,id){
+			var banner = c('product_details_banner')[0];
+			var video = c('product_details_video')[0].children[0];
+			var homeImg = c('product_details_home_img')[0];
+			var table = c('product_details_home_table')[0];
+			var videoTip = d('product_details_video_tip');
+
+			var data = obj[id];//database.js里面取道的所有数据
+			banner.setAttribute("data-src",data[0].img_view);
+			video.setAttribute("data-src",data[0].video);
+			if(data[0].tableImg == undefined){
+				homeImg.parentNode.removeChild(homeImg);
+			}else{
+				homeImg.setAttribute("data-src",data[0].tableImg);
+			}
+			if(data[0].video == ""){
+				videoTip.innerHTML = "该设备没有视频！";
+			}
+			setTimeout(function(){
+				video.playbackRate = 0.5;
+			},200)
+			for(var i = 0; i < data[1].length; i++){
+				for(var j = 0; j < data[1][i].length; j++){
+					var tr = document.createElement('tr');
+					if(data[1][i][j].texts == undefined){
+						if(data[1][i][j].title != undefined){
+							var tdi = document.createElement('td');
+							var tdn = document.createElement('td');
+							var tdt = document.createElement('td');
+
+							tdi.innerHTML = data[1][i][j].title;
+							tdi.rowSpan = data[1][i].length;
+							tdn.innerHTML = data[1][i][j].name;
+							tdt.innerHTML = data[1][i][j].text;
+
+							tr.append(tdi);
+							tr.append(tdn);
+							tr.append(tdt);
+						}else{
+							var tdn = document.createElement('td');
+							var tdt = document.createElement('td');
+
+							tdn.innerHTML = data[1][i][j].name;
+							tdt.innerHTML = data[1][i][j].text;
+
+							tr.append(tdn);
+							tr.append(tdt);
+						}
+					}else{
+						if(data[1][i][j].title != undefined){
+							var tdi = document.createElement('td');
+							var tdn = document.createElement('td');
+							var tdt = document.createElement('td');
+							var tdts = document.createElement('td');
+
+							tdi.innerHTML = data[1][i][j].title;
+							tdi.rowSpan = data[1][i].length;
+							tdn.innerHTML = data[1][i][j].name;
+							tdt.innerHTML = data[1][i][j].text;
+							tdt.style.backgroundColor = "#ffffff";
+							tdts.innerHTML = data[1][i][j].texts;
+
+							tr.append(tdi);
+							tr.append(tdn);
+							tr.append(tdt);
+							tr.append(tdts);
+						}else{
+							var tdn = document.createElement('td');
+							var tdt = document.createElement('td');
+							var tdts = document.createElement('td');
+
+							tdn.innerHTML = data[1][i][j].name;
+							tdt.innerHTML = data[1][i][j].text;
+							tdt.style.backgroundColor = "#ffffff";
+							tdts.innerHTML = data[1][i][j].texts;
+
+							tr.append(tdn);
+							tr.append(tdt);
+							tr.append(tdts);
+						}
+					}
+					table.append(tr);
+				}
+			}
+		}
+		commostart(database,commoid);
+
+		var title = c('product_details_home')[0].children[0].children[0].children[2].innerHTML;
+		n('title')[0].innerHTML = n('title')[0].innerText + '-' + title;
+	</script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

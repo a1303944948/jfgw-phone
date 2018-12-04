@@ -1,0 +1,266 @@
+var database = [
+	[
+		{img_view:'image/jnz_view.jpg',video:'image/jn.mp4',tableImg: 'image/jnI.jpg'},
+
+		[[{title:'基础信息',name:'品名',text:'金牛座'},
+		{name:'机器型号',text:'VMC0401002'},
+		{name:'高度',text:'1855mm'},
+		{name:'宽度',text:'1000mm'},
+		{name:'深度',text:'880mm'}],
+
+		[{title:'货道配置',name:'货道规格',text:'如下图'},
+		{name:'货道高度',text:'95mm'},
+		{name:'货道数量',text:'120'}],
+
+		[{title:'设备详情',name:'取物口',text:'10个'},
+		{name:'机器重量',text:'300Kg'},
+		{name:'输入电压',text:'220V50Hz'},
+		{name:'最大电流',text:'10A'},
+		{name:'最大功率',text:'2Kw'},
+		{name:'人机界面',text:'15.6寸红外触摸屏'},
+		{name:'工控机',text:'INBOX310'},
+		{name:'支付方式',text:'手机支付'},
+		{name:'温控系统',text:'5-65°C'},
+		{name:'数据通讯',text:'4G/WIFI/有线网络'},
+		{name:'设备安全',text:'摄像头'},
+		{name:'食品安全',text:'臭氧杀菌'},
+		{name:'操作系统',text:'Windows/Android'},
+		{name:'后台数据',text:'HONTECH'},
+		{name:'数据库',text:'云服务器'}]]
+	],[
+		{img_view:'image/szz_view.jpg',video:'image/sz.mp4'},
+
+		[[{title:'基础信息',name:'品名',text:'双子座'},
+		{name:'机器型号',text:'VMC08855W0'},
+		{name:'高度',text:'1915mm'},
+		{name:'宽度',text:'1382mm'},
+		{name:'深度',text:'976mm'}],
+
+		[{title:'货道配置',name:'货道规格',text:'250(长)*200(宽)mm'},
+		{name:'货道数量',text:'88'}],
+
+		[{title:'设备详情',name:'取物口',text:'1个'},
+		{name:'机器重量',text:'480Kg'},
+		{name:'输入电压',text:'220V50Hz'},
+		{name:'最大电流',text:'16A'},
+		{name:'最大功率',text:'3.5Kw'},
+		{name:'微波功率',text:'2.6Kw'},
+		{name:'人机界面',text:'55寸红外触摸屏'},
+		{name:'工控机',text:'INBOX310'},
+		{name:'支付方式',text:'手机支付'},
+		{name:'温控系统',text:'0-65°C'},
+		{name:'数据通讯',text:'4G/WIFI/有线网络'},
+		{name:'设备安全',text:'摄像头'},
+		{name:'食品安全',text:'臭氧杀菌'},
+		{name:'食品卫生',text:'紫外线消毒'},
+		{name:'操作系统',text:'Windows/Android'},
+		{name:'后台数据',text:'HONTECH'},
+		{name:'数据库',text:'云服务器'}]]
+	],[
+		{img_view:'image/byz_view.jpg',video:'image/by.mp4'},
+
+		[[{title:'基础信息',name:'品名',text:'白羊座'},
+		{name:'机器型号',text:'FC02'},
+		{name:'高度',text:'1860mm'},
+		{name:'宽度',text:'1025mm'},
+		{name:'深度',text:'916mm'}],
+
+		[{title:'货道配置',name:'货道规格',text:'85(长)*90(宽)*615or395(高)mm'},
+		{name:'货道数量',text:'28'}],
+
+		[{title:'设备详情',name:'取物口',text:'1个'},
+		{name:'机器重量',text:'247kg'},
+		{name:'输入电压',text:'220V50Hz'},
+		{name:'最大电流',text:'5A'},
+		{name:'最大功率',text:'1.1Kw'},
+		{name:'人机界面',text:'10.1寸电容触摸屏'},
+		{name:'支付方式',text:'手机支付'},
+		{name:'温控系统',text:'-18~-22°C'},
+		{name:'数据通讯',text:'4G/WIFI/有线网络'},
+		{name:'操作系统',text:'Windows/Android'},
+		{name:'后台数据',text:'HONTECH'},
+		{name:'数据库',text:'云服务器'}]]
+	],[
+		{img_view:'image/zhj_view.jpg',video:'image/zh.mp4'},
+
+		[[{title:'基础信息',name:'品名',text:'综合机'},
+		{name:'机器型号',text:'TF-AX-A5-A-A / TF-AX-B5-A-A'},
+		{name:'高度',text:'1850mm'},
+		{name:'宽度',text:'1160mm'},
+		{name:'深度',text:'830mm'}],
+
+		[{title:'货道配置',name:'可容纳物品数量以标准瓶（罐）装饮料直径（62mm~65mm）计算：',text:'264瓶（罐）'}],
+
+		[{title:'设备详情',name:'取物口',text:'1个'},
+		{name:'机器重量',text:'400kg'},
+		{name:'输入电压',text:'AC220V'},
+		{name:'最大电流',text:'4A'},
+		{name:'最大功率',text:'800w'},
+		{name:'工控机',text:'ZC-bt19s'},
+		{name:'支付方式',text:'微信、支付宝、会员卡'},
+		{name:'制冷系统',text:'R134A'},
+		{name:'数据传输',text:'4G路由器'},
+		{name:'操作系统',text:'Windows7 64位'}]]
+	],[
+		{img_view:'image/ssj_view.jpg',video:'image/ss.mp4'},
+
+		[[{title:'基础信息',name:'品名',text:'熟食机',texts:'饮品机'},
+		{name:'机器型号',text:'HT071',texts:'HT072'},
+		{name:'高度',text:'1950mm',texts:'1950mm'},
+		{name:'宽度',text:'1050mmm',texts:'650mm'},
+		{name:'深度',text:'1200mm',texts:'1200mm'}],
+
+		[{title:'货道配置',name:'货道规格',text:'80*50mm',texts:'60*60mm'},
+		{name:'货道高度',text:'100mm',texts:'190mm'},
+		{name:'货道数量',text:'288',texts:'125'}],
+
+		[{title:'设备详情',name:'取物口',text:'1个',texts:'1个'},
+		{name:'机器重量',text:'300kg',texts:'230kg'},
+		{name:'输入电压',text:'220V50Hz',texts:'220V50Hz'},
+		{name:'最大电流',text:'6.8A',texts:'3.6A'},
+		{name:'最大功率',text:'1.5Kw',texts:'800w'},
+		{name:'人机界面',text:'47寸红外触摸屏',texts:'27寸显示屏'},
+		{name:'工控机',text:'I5 3317U',texts:'无'},
+		{name:'支付方式',text:'手机支付，非接触卡支付',texts:'无'},
+		{name:'温控系统',text:'65±3°',texts:'3±2°'},
+		{name:'数据通讯',text:'4G/WIFI/有线网络',texts:'RS485'},
+		{name:'设备安全',text:'摄像头、安规、漏电保护',texts:'安规、漏电保护'},
+		{name:'食品安全',text:'紫外线杀菌',texts:'紫外线杀菌'},
+		{name:'操作系统',text:'Linux',texts:'无'},
+		{name:'后台数据',text:'HONTECH',texts:'HONTECH'},
+		{name:'数据库',text:'云服务器',texts:'云服务器'}]]
+	],[
+		{img_view:'image/zbj_view.jpg',video:'image/zb.mp4'},
+
+		[[{title:'基础信息',name:'品名',text:'桌面制冰机'},
+		{name:'机器型号',text:'HT085'},
+		{name:'高度',text:'710mm'},
+		{name:'宽度',text:'605mm'},
+		{name:'深度',text:'305mm'}],
+
+		[{title:'设备详情',name:'产冰能力',text:'100kg/24h'},
+		{name:'冰块尺寸/重量',text:'15*15*10mm/1.2g'},
+		{name:'储冰量',text:'1.9kg'},
+		{name:'取物口',text:'1个'},
+		{name:'机器重量',text:'50kg'},
+		{name:'输入电压',text:'220V50Hz'},
+		{name:'最大电流',text:'3A'},
+		{name:'最大功率',text:'660w'},
+		{name:'人机界面',text:'3.5寸显示屏'},
+		{name:'设备安全',text:'安规、漏电保护'},
+		{name:'食品安全',text:'食品级材料'},
+		{name:'操作系统',text:'单片机'},
+		{name:'数据库',text:'云服务器'},
+		{name:'出冰方式',text:'时间控制'},
+		{name:'冷却方式',text:'气冷'},
+		{name:'使用制冷介质',text:'R134a'},
+		{name:'冰块形状',text:'碎冰'}]]
+	],[
+		{img_view:'image/kfj_view.jpg',video:'image/kf.mp4'},
+
+		[[{title:'基础信息',name:'品名',text:'咖啡机'},
+		{name:'机器型号',text:'HT084'},
+		{name:'高度',text:'1830mm'},
+		{name:'宽度',text:'720mm'},
+		{name:'深度',text:'780mm'}],
+
+		[{title:'设备详情',name:'粉料盒数量',text:'6个'},
+		{name:'纸杯口径',text:'80mm(12盎司)'},
+		{name:'纸杯数量',text:'375'},
+		{name:'取物口',text:'1个'},
+		{name:'机器重量',text:'暂无'},
+		{name:'输入电压',text:'220V50Hz'},
+		{name:'最大电流',text:'10A'},
+		{name:'最大功率',text:'2200w'},
+		{name:'人机界面',text:'23.6寸触摸屏'},
+		{name:'工控板',text:'EITX-7120'},
+		{name:'支付方式',text:'手机支付，非接触卡支付'},
+		{name:'温控系统',text:'常温'},
+		{name:'数据通讯',text:'4G/WIFI/有线网络'},
+		{name:'设备安全',text:'安规、漏电保护'},
+		{name:'食品安全',text:'食品级材料'},
+		{name:'操作系统',text:'Windows 7'},
+		{name:'后台数据',text:'HONTECH'},
+		{name:'数据库',text:'云服务器'}]]
+	],[
+		{img_view:'image/fmm_view.jpg',video:'image/fm.mp4'},
+
+		[[{title:'基础信息',name:'品名',text:'自动售餐机'},
+		{name:'机器型号',text:'VMC05621W4'},
+		{name:'高度',text:'1800mm'},
+		{name:'宽度',text:'1000mm'},
+		{name:'深度',text:'820mm'}],
+
+		[{title:'设备详情',name:'机器重量',text:'320Kg'},
+		{name:'输入电压',text:'220V50Hz'},
+		{name:'最大电流',text:'20A'},
+		{name:'最大功率',text:'3800w'},
+		{name:'最小功率',text:'2780w'},
+		{name:'微波型号',text:'NE-1753'},
+		{name:'炉腔尺寸',text:'330*310*175mm'},
+		{name:'多媒体',text:'21.5寸红外触摸屏'},
+		{name:'工控机',text:'MI-3265'},
+		{name:'支付方式',text:'手机支付'},
+		{name:'制冷系统',text:'5±3°(630w)'},
+		{name:'温控系统',text:'自动温控系统'},
+		{name:'数据传输',text:'F3A26'},
+		{name:'设备安全',text:'摄像头监控 WX151HD 晟悦'},
+		{name:'取物口数量',text:'1个'}]]
+	],[
+		{img_view:'image/stj_view.jpg',video:'image/st.mp4'},
+
+		[[{title:'基础信息',name:'品名',text:'薯条机'},
+		{name:'机器型号',text:''},
+		{name:'高度',text:'2276mm'},
+		{name:'宽度',text:'1070mm'},
+		{name:'深度',text:'1018mm'}],
+
+		[{title:'设备详情',name:'输入电压',text:'220V/50Hz'},
+		{name:'最大功率',text:'3100W'},
+		{name:'最大电流',text:'14.1A'},
+		{name:'操作接口',text:'LCD触摸屏、Linux系统'},
+		{name:'支付界面',text:'微信、支付宝等'},
+		{name:'感测器',text:'红外线'},
+		{name:'储存量',text:'食物25KG，杯子220个，酱包盒180个'},
+		{name:'多媒体',text:'21.5寸红外触摸屏'},
+		{name:'可依客户需求增加其他选配功能如',text:'后台系统功能'}]]
+	],[
+		{img_view:'image/tgj_view.jpg',video:''},
+
+		[[{title:'基础信息',name:'品名',text:'糖果机'},
+		{name:'机器型号',text:''},
+		{name:'高度',text:'1596mm'},
+		{name:'宽度',text:'468mm'},
+		{name:'深度',text:'352mm'}],
+
+		[{title:'设备详情',name:'重量',text:'46KG'},
+		{name:'输入电压',text:'220V AC 50Hz'},
+		{name:'消耗功率',text:'40W'},
+		{name:'最大电流',text:'0.2A'},
+		{name:'支付方式',text:'硬币&云支付(微信、支付宝)'},
+		{name:'最大储糖量',text:'1200颗'},
+		{name:'使用温度',text:'-5-28℃'},
+		{name:'使用环境',text:'室内'},
+		{name:'后台系统',text:'云支付后台'},
+		{name:'感测器',text:'红外线'}]]
+	],[
+		{img_view:'image/czj_view.jpg',video:''},
+
+		[[{title:'基础信息',name:'品名',text:'鲜榨橙汁机'},
+		{name:'机器型号',text:''},
+		{name:'高度',text:'1885mm'},
+		{name:'宽度',text:'1400'},
+		{name:'深度',text:'916'}],
+
+		[{title:'设备详情',name:'取物口',text:'1'},
+		{name:'储橙容量',text:'500个左右'},
+		{name:'机器重量',text:'590kg'},
+		{name:'单杯榨橙时间',text:'50-60S'},
+		{name:'落杯器储杯数量',text:'130'},
+		{name:'封杯方式',text:'自动封杯'},
+		{name:'额定制冷量',text:'1200W'},
+		{name:'制冷温度',text:'5-10℃'},
+		{name:'使用环境',text:'5～40 ℃'},
+		{name:'数据通讯',text:'3G网络'}]]
+	]
+];

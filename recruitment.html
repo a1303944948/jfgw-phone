@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>鸿丰集团-诚聘英才</title>
+	<link href="image/logo.jpg" type="image/x-icon" rel="icon"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body style="background-color: #f0f0f0">
+	<header>
+		<div class='header'>
+			<div class='header_left'>
+				<a href='index.html'><img data-src='image/logo.svg'/></a>
+			</div>
+			<div class='header_right'>
+				<ul>
+					<a href="recruitment.html"><li class="header_right_ul_li">诚聘英才</li></a>
+					<a href='contact.html'><li>征求合作</li></a>
+					<a href='new_show.html' class="header_right_hover"><li>
+						新闻中心
+						<!-- <div class="header_right_list">
+							<span onclick="location.href='new_show.html'">展会</span>
+							<span onclick="location.href='news.html'">新产品</span>
+						</div> -->
+					</li></a>
+					<a href="product.html"><li>产品设备</li></a>
+					<a href='index.html'><li>网站首页</li></a>
+				</ul>
+			</div>
+			<div style='clear: both'></div>
+		</div>
+	</header>
+	<div class='headers'></div>
+	<div class="recruitment_home">
+		<div class="recruitment_body">
+			<p>鸿丰研发中心招聘启事<br/>
+				<span>联系电话：0573-84068800(黄小姐)</span>
+				<span>E-mail：huangxiaoli@hontechgroup.com</span>
+			</p>
+			<div id="recruitment_hf" v-cloak>
+				<div class="recruitment_head">
+					<p>
+						<span>职位</span>
+						<span>薪资</span>
+						<span>招聘人数</span>
+						<span>岗位类型</span>
+						<span>工作地点</span>
+						<span>更新时间</span>
+					</p>
+				</div>
+				<div class="recruitment_list" v-for="datas in hf">
+					<p>
+						<span v-if="datas.isFast == 1">{{datas.position}}(<b>急聘</b>)</span>
+						<span v-else>{{datas.position}}</span>
+						<span>{{datas.pay}}</span>
+						<span>{{datas.number}}</span>
+						<span>{{datas.workType}}</span>
+						<span>{{datas.workPlace}}</span>
+						<span>{{datas.time}}</span>
+						<img data-src="image/zk.png"/>
+					</p>
+					<div class="recruitment_list_item" v-html="datas.content">
+					</div>
+				</div>
+				<!-- <div class="recruitment_list">
+					<p>
+						<span>测试工程师</span>
+						<span>面议</span>
+						<span>2人</span>
+						<span>技术研发类</span>
+						<span>鸿丰研发中心</span>
+						<span>2018年5月28日</span>
+						<img data-src="image/zk.png"/>
+					</p>
+					<div class="recruitment_list_item">
+						<p>1.男生，22-40岁</p>
+						<p>2.大专以上学历</p>
+						<p>3.2年以上工作经验</p>
+						<p>4.应用电子或相关专业</p>
+						<p>5.能熟练使用电烙铁，热风枪，万用表，示波器等维修工具，能对PCB的各种插件和贴片器件进行焊接更换。</p>
+						<p>6.能看懂PCB 原理图，熟悉电子元件原理，具备数字电路、模拟电路等基础知识等。</p>
+					</div>
+				</div> -->
+			</div>
+			<p>浙江嘉丰招聘启事<br/>
+				<span>联系电话：0573-84062333 转分机 133或130(魏先生/毛女士)</span>
+				<span>E-mail：jiafeng_hr@hontechgroup.com/maohui@hontechgroup.com</span>
+			</p>
+			<div id="recruitment_jf" v-cloak>
+				<div class="recruitment_head">
+					<p>
+						<span>职位</span>
+						<span>薪资</span>
+						<span>招聘人数</span>
+						<span>岗位类型</span>
+						<span>工作地点</span>
+						<span>更新时间</span>
+					</p>
+				</div>
+				<div class="recruitment_list" v-for="datax in jf">
+					<p>
+						<span v-if="datax.isFast == 1">{{datax.position}}(<b>急聘</b>)</span>
+						<span v-else>{{datax.position}}</span>
+						<span>{{datax.pay}}</span>
+						<span>{{datax.number}}</span>
+						<span>{{datax.workType}}</span>
+						<span>{{datax.workPlace}}</span>
+						<span>{{datax.time}}</span>
+						<img data-src="image/zk.png"/>
+					</p>
+					<div class="recruitment_list_item" v-html="datax.content">
+					</div>
+				</div>
+				<!-- <div class="recruitment_list">
+					<p>
+						<span>工安环保工程师</span>
+						<span>面议</span>
+						<span>1人</span>
+						<span>工业环保类</span>
+						<span>浙江嘉丰机电</span>
+						<span>2018年5月28日</span>
+						<img data-src="image/zk.png"/>
+					</p>
+					<div class="recruitment_list_item">
+						<p>1.22-30岁</p>
+						<p>2.大专以上学历，环保、安全类专业</p>
+						<p>3.有制造型企业工业安全、环境管理经验1年以上，持相关资质证书者佳</p>
+						<p>4.对国家相关法律法规熟悉</p>
+					</div>
+				</div>
+				<div class="recruitment_list">
+					<p>
+						<span>机械工程师</span>
+						<span>面议</span>
+						<span>2人</span>
+						<span>生产工艺类</span>
+						<span>浙江嘉丰机电</span>
+						<span>2018年5月28日</span>
+						<img data-src="image/zk.png"/>
+					</p>
+					<div class="recruitment_list_item">
+						<p>1.22-30岁</p>
+						<p>2.大专以上学历，英语4级，机械、电子相关专业</p>
+						<p>3.熟悉CAD、PRO-E或SOLID-WORK</p>
+						<p>4.机械类制造型企业同类工作经验2年以上</p>
+					</div>
+				</div>
+				<div class="recruitment_list">
+					<p>
+						<span>品质工程师</span>
+						<span>面议</span>
+						<span>2人</span>
+						<span>质量管理类</span>
+						<span>浙江嘉丰机电</span>
+						<span>2018年5月28日</span>
+						<img data-src="image/zk.png"/>
+					</p>
+					<div class="recruitment_list_item">
+						<p>1.22-35岁</p>
+						<p>2.大专以上学历，英语4级，机械、电子、质量相关专业</p>
+						<p>3.有1年以上钣金或五金行业质量管控经验佳</p>
+						<p>4.沟通能力佳，优秀相关专业应届毕业生亦可</p>
+					</div>
+				</div>
+				<div class="recruitment_list">
+					<p>
+						<span>专案经理</span>
+						<span>面议</span>
+						<span>2人</span>
+						<span>市场营销类</span>
+						<span>浙江嘉丰机电</span>
+						<span>2018年5月28日</span>
+						<img data-src="image/zk.png"/>
+					</p>
+					<div class="recruitment_list_item">
+						<p>1.30-40岁</p>
+						<p>2.大专以上学历，机械专业，英文佳</p>
+						<p>3.具有专案客户管理资质8年以上，能独立面对国外客户</p>
+					</div>
+				</div> -->
+			</div>
+			<p>东莞嘉丰招聘启事<br/>
+				<span>联系电话：0769-83226777-150/13662944236(戴先生)</span>
+				<span>E-mail：hr@hontechgroup.com</span>
+			</p>
+			<div id="recruitment_dg" v-cloak>
+				<div class="recruitment_head">
+					<p>
+						<span>职位</span>
+						<span>薪资</span>
+						<span>招聘人数</span>
+						<span>岗位类型</span>
+						<span>工作地点</span>
+						<span>更新时间</span>
+					</p>
+				</div>
+				<div class="recruitment_list" v-for="dataz in dg">
+					<p>
+						<span v-if="dataz.isFast == 1">{{dataz.position}}(<b>急聘</b>)</span>
+						<span v-else>{{dataz.position}}</span>
+						<span>{{dataz.pay}}</span>
+						<span>{{dataz.number}}</span>
+						<span>{{dataz.workType}}</span>
+						<span>{{dataz.workPlace}}</span>
+						<span>{{dataz.time}}</span>
+						<img data-src="image/zk.png"/>
+					</p>
+					<div class="recruitment_list_item" v-html="dataz.content">
+					</div>
+				</div>
+				<!-- <div class="recruitment_list">
+					<p>
+						<span>钣金工程师(<b>急聘</b>)</span>
+						<span>6-8K</span>
+						<span>5人</span>
+						<span>生产工艺类</span>
+						<span>东莞嘉丰机电</span>
+						<span>2018年5月28日</span>
+						<img data-src="image/zk.png"/>
+					</p>
+					<div class="recruitment_list_item">
+						<p>1.大专及以上学历，机械类相关专业</p>
+						<p>2.三年以上相关工作经验，能熟练使用CAD/PROE绘图软件</p>
+						<p>3.能熟练的对机箱机柜类钣金产品完成设计图纸确认并转化为生产工艺图纸和文件</p>
+					</div>
+				</div>
+				<div class="recruitment_list">
+					<p>
+						<span>品质工程师(<b>急聘</b>)</span>
+						<span>6-8K</span>
+						<span>1人</span>
+						<span>质量管理类</span>
+						<span>东莞嘉丰机电</span>
+						<span>2018年5月28日</span>
+						<img data-src="image/zk.png"/>
+					</p>
+					<div class="recruitment_list_item">
+						<p>1.大专及以上学历，机械/电子类相关专业</p>
+						<p>2.三年以上QE经验，略懂CAD/PROE绘图软件</p>
+						<p>3.能制定各种品质相关检验标准及文件</p>
+						<p>4.熟悉现场品质管控、异常处理及改善报告等资料制作</p>
+						<p>5.能用英语与客户做技术交流者优先录用</p>
+					</div>
+				</div>
+				<div class="recruitment_list">
+					<p>
+						<span>电子工程师</span>
+						<span>6-8K</span>
+						<span>2人</span>
+						<span>生产制造类</span>
+						<span>东莞嘉丰机电</span>
+						<span>2018年5月28日</span>
+						<img data-src="image/zk.png"/>
+					</p>
+					<div class="recruitment_list_item">
+						<p>1.大专及以上学历，电子或机械类相关专业</p>
+						<p>2.负责结构、电子组装及新产品的导入</p>
+						<p>3.治具制作、改良、安装测试及仪器维护和设定</p>
+						<p>4.试验新产品功能及特性、测量产品的组装工时</p>
+						<p>5.负责作业指导书的变更、工时评估，产线问题及效率提案改善</p>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/footer.js"></script>
+	<script type="text/javascript">
+		function d(id){
+			return document.getElementById(id);
+		}
+		function c(cls){
+			return document.getElementsByClassName(cls);
+		}
+		function n(name){
+			return document.getElementsByTagName(name);
+		}
+
+		var hf;
+		var jf;
+		var dg;
+
+
+		function timestampToTime(timestamp) {
+	        var date = new Date(timestamp);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+	        Y = date.getFullYear() + '-';
+	        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+	        D = date.getDate() + ' ';
+	        h = date.getHours() + ':';
+	        m = date.getMinutes() + ':';
+	        s = date.getSeconds();
+	        return Y+M+D+h+m+s;
+	    }
+
+		$.ajax({
+			type: 'post',
+			url: 'http://test.hontech-rdcenter.com:8080/bg-uc/job/recruit.json',
+			data: {},
+			async: false,
+			dataType: 'json',
+			success: function(data){
+
+			    var date = new Date();
+			    var nian = date.getFullYear();
+			    var yue = date.getMonth()+1;
+			    var ri = date.getDate();
+
+			    var ii = String(yue);
+				var iii = ii.padStart(2, "0");
+
+			    var jj = String(ri);
+				var jjj = jj.padStart(2, "0");
+
+			    var time = nian + '-' + iii + '-' + jjj;
+
+				for(var j = 0; j < data.length; j++){
+					for(var i = 0; i < data[j].length; i++){
+						/*var time = data[j][i].time.time;
+					    time = timestampToTime(time);*/
+					    data[j][i].time = time;
+
+					}
+				}
+				hf = data[0];
+				jf = data[1];
+				dg = data[2];
+				var vm = new Vue({
+					el: '#recruitment_hf',
+					data: hf,
+				});
+				var vms = new Vue({
+					el: '#recruitment_jf',
+					data: jf,
+				});
+				var vmz = new Vue({
+					el: '#recruitment_dg',
+					data: dg,
+				});
+
+			}
+		});
+
+		var list = c('recruitment_list');
+		var lists = c('recruitment_list');
+		for(var i = 0; i < list.length; i++){
+			(function(q){
+				list[q].children[0].onclick = function(){
+					if(this.nextSibling.nextSibling.clientHeight != 0){
+						this.nextSibling.nextSibling.style.height = '0px';
+						this.children[6].style.transform = 'rotate(0deg)';
+					}else{
+						for(var j = 0; j < lists.length; j++){
+							lists[j].children[0].nextSibling.nextSibling.style.height = '0px';
+							lists[j].children[0].children[6].style.transform = 'rotate(0deg)';
+						}
+						this.nextSibling.nextSibling.style.height = this.nextSibling.nextSibling.scrollHeight + 'px';
+						this.children[6].style.transform = 'rotate(90deg)';
+					}
+				}
+			})(i)
+		};
+
+		/*var XML = new XMLHttpRequest();
+		XML.open('post','http://10.1.8.34:8080/bg-uc/job/recruit.json',true);
+		XML.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+		XML.send(null);
+		XML.onreadystatechange = function(e){
+			console.log(e);
+		}*/
+	</script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

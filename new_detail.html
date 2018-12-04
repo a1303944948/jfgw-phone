@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>浙江嘉丰机电官网</title>
+	<link href="image/logo.jpg" type="image/x-icon" rel="icon"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+</head>
+<body style="background-color: #f0f0f0">
+	<!--<div id='scroll'></div>-->
+	<header>
+		<div class='header'>
+			<div class='header_left'>
+				<a href='index.html'><img data-src='image/logo.svg'/></a>
+			</div>
+			<div class='header_right'>
+				<ul>
+					<a href="recruitment.html"><li>诚聘英才</li></a>
+					<a href='contact.html'><li>征求合作</li></a>
+					<a href='new_show.html' class="header_right_hover"><li class="header_right_ul_li">
+						新闻中心
+						<!-- <div class="header_right_list">
+							<span onclick="location.href='new_show.html'">展会</span>
+							<span onclick="location.href='news.html'">新产品</span>
+						</div> -->
+					</li></a>
+					<a href="product.html"><li>产品设备</li></a>
+					<a href='index.html'><li>网站首页</li></a>
+				</ul>
+			</div>
+			<div style='clear: both'></div>
+		</div>
+	</header>
+	<div class='headers'></div>
+	<div class="new_detail_home">
+		<div class="new_detail_left">
+			<div class="new_detail_left_head">
+				<p></p>
+				<span><!-- 2010-8-25 --></span>
+			</div>
+			<div class="new_detail_left_body">
+			</div>
+		</div>
+		<div class="new_detail_right">
+			<p>为你推荐</p>
+			<ul>
+			</ul>
+		</div>
+		<div style="clear: both"></div>
+	</div>
+	<script type="text/javascript" src="js/footer.js"></script>
+	<script type="text/javascript">
+		function GetQueryString(name){
+			var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+			if(r!=null)return  unescape(r[2]); return null;
+		}
+		function d(id){
+			return document.getElementById(id);
+		}
+		function c(cls){
+			return document.getElementsByClassName(cls);
+		}
+
+		function timestampToTime(timestamp) {
+	        var date = new Date(timestamp);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+	        Y = date.getFullYear() + '-';
+	        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+	        D = date.getDate() + ' ';
+	        return Y+M+D;
+	    }
+		$.ajax({
+			type: 'post',
+			url: 'http://test.hontech-rdcenter.com:8080/bg-uc/news/details.json',
+			data: {
+				id: GetQueryString('id'),
+			},
+			async: false,
+			dataType: 'json',
+			success: function(data){
+				c('new_detail_left_head')[0].children[0].innerHTML = data.title;
+				c('new_detail_left_head')[0].children[1].innerHTML = timestampToTime(data.createTime.time);
+				c('new_detail_left_body')[0].innerHTML = data.content;
+			}
+		})
+
+		$.ajax({
+			type: 'post',
+			url: 'http://test.hontech-rdcenter.com:8080/bg-uc/news/recommend.json',
+			data: {},
+			dataType: 'json',
+			success: function(msg){
+				var ul = c('new_detail_right')[0].children[1];
+				for(var i = 0; i < msg.length; i++){
+					var li = document.createElement('li');
+					li.innerHTML = msg[i].title;
+					(function(q){
+						li.onclick = function(){location.href = 'new_detail.html?id=' + msg[q].newsid};
+					})(i)
+					ul.append(li);
+				}
+			}
+		})
+	</script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

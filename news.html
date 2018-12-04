@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>浙江嘉丰机电官网</title>
+	<link href="image/logo.jpg" type="image/x-icon" rel="icon"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body style="background-color: #f0f0f0">
+	<!--<div id='scroll'></div>-->
+	<header>
+		<div class='header'>
+			<div class='header_left'>
+				<a href='index.html'><img data-src='image/logo.svg'/></a>
+			</div>
+			<div class='header_right'>
+				<ul>
+					<a href="recruitment.html"><li>诚聘英才</li></a>
+					<a href='contact.html'><li>征求合作</li></a>
+					<a href='new_show.html' class="header_right_hover"><li class="header_right_ul_li">
+						新闻中心
+						<!-- <div class="header_right_list">
+							<span onclick="location.href='new_show.html'">展会</span>
+							<span onclick="location.href='news.html'">新产品</span>
+						</div> -->
+					</li></a>
+					<a href="product.html"><li>产品设备</li></a>
+					<a href='index.html'><li>网站首页</li></a>
+				</ul>
+			</div>
+			<div style='clear: both'></div>
+		</div>
+	</header>
+	<div class='headers'></div>
+	<div class="news_home">
+		<div class="news_body" v-cloak>
+			<div class="news_body_list" v-for="(dataa, index) in data" v-if="index<5">
+				<div class="news_body_list_left">
+					<img data-src="image/jnz.jpg" />
+				</div>
+				<div class="news_body_list_right">
+					<h4><a href="new_detail.html">新闻页面尚在开发中，请移至其他页面浏览，点击跳转回首页</a></h4>
+					<span>这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容这里是新闻内容<span style="display: none;">...</span></span>
+					<p>{{dataa.passtime}}</p>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+			<div class="news_pagea">
+				<div class="news_page">
+					<b><<</b>
+					<b><</b>
+					<b>></b>
+					<b>>></b>
+					<div style="clear: both"></div>
+				</div>
+			</div>
+		</div>
+		<div class="news_sidebar">
+			<div class="news_sidebar_head">
+				<input type="text" placeholder="seach"/>
+				<span></span>
+				<div style="clear: both;"></div>
+			</div>
+			<div class="news_sidebar_foor">
+				<p>为你推荐</p>
+				<ul v-cloak>
+					<li v-for="(datab, index) in data" v-if="index<5">
+						这里是推荐内容这里是推荐内容这里是推荐内容
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div style='clear: both'></div>
+	</div>
+	<script type="text/javascript">
+		function d(id){
+			return document.getElementById(id);
+		}
+		function c(cls){
+			return document.getElementsByClassName(cls);
+		}
+
+		$.ajax({
+			type: 'post',
+			url: 'https://www.apiopen.top/satinGodApi?type=1&page=1',
+			data: {},
+			async: false,
+			dataType: 'json',
+			success: function(data){
+				console.log(data.data);
+				var obj = ({'data':data.data});
+				var vm = new Vue({
+				  el: '.news_body',
+				  data: obj,
+				})
+				var right = c('news_body_list_right');
+				for(var i = 0; i < right.length; i++){
+					//正文内容超出则隐藏
+					if(right[i].children[1].clientHeight > 145){
+						right[i].children[1].style.height = '145px';
+						right[i].children[1].children[0].style.display = 'block';
+					};
+				}
+				for(var i = 0; i < right.length/2; i++){
+					var span = document.createElement('span');
+					span.innerHTML = i+1;
+					c('news_page')[0].children[2+i].before(span);
+				}
+				var vms = new Vue({
+				  el: '.news_sidebar_foor>ul',
+				  data: obj,
+				})
+			}
+		})
+		$('.news_page').children('span').on('click',function(){
+			$.ajax({
+				type: 'post',
+				url: 'https://www.apiopen.top/satinGodApi',
+				data: {
+					type: 1,
+					page: $(this).index()-1,
+				},
+				async: false,
+				dataType: 'json',
+				success: function(data){
+					console.log(data.data);
+					var obj = ({'data':data.data});
+					var vm = new Vue({
+					  el: '.news_body',
+					  data: obj,
+					})
+					var right = c('news_body_list_right');
+					for(var i = 0; i < right.length; i++){
+						//正文内容超出则隐藏
+						if(right[i].children[1].clientHeight > 145){
+							right[i].children[1].style.height = '145px';
+							right[i].children[1].children[0].style.display = 'block';
+						};
+					}
+					$('.news_page').children('span').hide();
+					for(var i = 0; i < right.length/2; i++){
+						var span = document.createElement('span');
+						span.innerHTML = i+1;
+						c('news_page')[0].children[2+i].before(span);
+					}
+					var vms = new Vue({
+					  el: '.news_sidebar_foor>ul',
+					  data: obj,
+					})
+				}
+			})
+		})
+	</script>
+	<script type="text/javascript" src="js/footer.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

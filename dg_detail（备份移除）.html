@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>嘉丰机电有限公司</title>
+	<link href="image/logo.jpg" type="image/x-icon" rel="icon"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+	<header>
+		<div class='header'>
+			<div class='header_left'>
+				<a href='index.html'><img data-src='image/logo.svg'/></a>
+			</div>
+			<div class='header_right'>
+				<ul>
+					<a href="recruitment.html"><li>诚聘英才</li></a>
+					<a href='contact.html'><li>征求合作</li></a>
+					<a href='new_show.html' class="header_right_hover"><li>
+						新闻中心
+						<!-- <div class="header_right_list">
+							<span onclick="location.href='new_show.html'">展会</span>
+							<span onclick="location.href='news.html'">新产品</span>
+						</div> -->
+					</li></a>
+					<a href="product.html"><li>产品设备</li></a>
+					<a href='index.html'><li>网站首页</li></a>
+				</ul>
+			</div>
+			<div style='clear: both'></div>
+		</div>
+	</header>
+	<div class='headers'></div>
+	<div class="jf_detail_head">
+	</div>
+	<div class="jf_detail_body">
+		<p>生产设备</p>
+		<div class="jf_detail_body_list"></div>
+		<div style="clear: both;"></div>
+	</div>
+	<div class="jf_detail_body">
+		<p>荣誉</p>
+		<div class="jf_detail_body_list"></div>
+		<div style="clear: both;"></div>
+	</div>
+	<script type="text/javascript">
+		function d(id){
+			return document.getElementById(id);
+		}
+		function c(cls){
+			return document.getElementsByClassName(cls);
+		}
+		function n(name){
+			return document.getElementsByTagName(name);
+		}
+
+		/*数据资料*/
+		var object = ['剪床','镭射','数控','折弯','冲压','焊接','Zinc Plating Line','铬酸盐线','不锈钢钝化线','抛光','喷粉','丝印','盐雾试验','雷射 QC(2D)','测量仪(3D)','电子式破裂强度试验机','拉力试验机','RoHS检测仪','Hi-Pot 检测仪'];
+
+		var objects = ['华为质量奖(包含社会责任)','华为供应商可持续发展奖','烽火核心合作伙伴','华为优秀质量奖','华为重大项目支持奖','华为研发支持奖'];
+
+		var body_list = c('jf_detail_body_list');
+		/*生产设备*/
+		for(var i = 0; i <= 18; i++){
+			var div = document.createElement('div');
+			var img = document.createElement('img');
+			var p = document.createElement('p');
+			var ii = String(i+1);
+			var iii = ii.padStart(3, "0");
+			img.setAttribute("data-src","image/dg/dg_"+iii+".jpg");
+			p.innerHTML = object[i];
+			div.append(img);
+			div.append(p);
+			body_list[0].append(div);
+		}
+		/*我们的荣誉*/
+		for(var i = 0; i <= 5; i++){
+			var div = document.createElement('div');
+			var p = document.createElement('p');
+			var img = document.createElement('img');
+			var ii = String(i+1);
+			var iii = ii.padStart(3, "0");
+			img.setAttribute("data-src","image/dg/jiang/jiang_"+iii+".jpg");
+			p.innerHTML = objects[i];
+			div.append(img);
+			div.append(p);
+			body_list[1].append(div);
+		}
+		/*给所有list添加取消浮动影响*/
+		for(var i = 0; i < body_list.length; i++){
+			var div = document.createElement('div');
+			div.style.clear = 'both';
+			body_list[i].append()
+		}
+	</script>
+	<script type="text/javascript" src="js/footer.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

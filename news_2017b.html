@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>鸿丰集团-新闻中心</title>
+	<link href="image/logo.jpg" type="image/x-icon" rel="icon"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body style="background-color: #f0f0f0">
+	<!--<div id='scroll'></div>-->
+	<header>
+		<div class='header'>
+			<div class='header_left'>
+				<a href='index.html'><img data-src='image/logo.svg'/></a>
+			</div>
+			<div class='header_right'>
+				<ul>
+					<a href="recruitment.html"><li>诚聘英才</li></a>
+					<a href='contact.html'><li>征求合作</li></a>
+					<a href='new_show.html' class="header_right_hover"><li class="header_right_ul_li">
+						新闻中心
+						<!-- <div class="header_right_list">
+							<span onclick="location.href='new_show.html'">展会</span>
+							<span onclick="location.href='news.html'">新产品</span>
+						</div> -->
+					</li></a>
+					<a id='cpsb'><li>产品设备</li></a>
+					<a href='index.html'><li>网站首页</li></a>
+				</ul>
+			</div>
+			<div style='clear: both'></div>
+		</div>
+	</header>
+	<div class='headers'></div>
+	<div class="new_detail_home">
+		<div class="new_detail_left">
+			<div class="new_detail_left_head">
+				<p>南京国际博览会议中心 台湾精品展览会</p>
+				<span>2017-11-7</span>
+			</div>
+			<div class="new_detail_left_body">
+				<div style="width: 48%; float: left;">
+					<img style="width: 100%;" data-src="image/news/zhanhui/2017nanjing/001.jpg"/>
+					<img style="width: 100%; margin-top: 30px;" data-src="image/news/zhanhui/2017nanjing/002.jpg"/>
+				</div>
+				<div style="width: 48%; margin-left: 4%; margin-top: 104px; float: right;">
+					<img style="width: 100%;" data-src="image/news/zhanhui/2017nanjing/004.jpg"/>
+				</div>
+				<!--<img data-src="image/news/zhanhui/2017nanjing/003.jpg"/>-->
+			</div>
+		</div>
+		<div class="new_detail_right">
+			<p>为你推荐</p>
+			<ul>
+				<li onclick="location.href='news_2018.html'">2018上海自动售货设备展</li>
+				<li onclick="location.href='news_2017.html'">2017第十四届中国国际自助服务产品及自动售货系统展览会</li>
+				<li onclick="location.href='news_2017b.html'">南京国际博览会议中心 台湾精品展览会</li>
+			</ul>
+		</div>
+		<div style="clear: both"></div>
+	</div>
+	</div>
+	<script type="text/javascript">
+		function d(id){
+			return document.getElementById(id);
+		}
+		function c(cls){
+			return document.getElementsByClassName(cls);
+		}
+
+		var cpsb = d('cpsb');
+		cpsb.onclick = function(){
+			sessionStorage.textname = 'nihao';
+			location.href = 'index.html';
+		}
+	</script>
+	<script type="text/javascript" src="js/footer.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

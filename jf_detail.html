@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>嘉丰机电有限公司</title>
+	<link href="image/logo.jpg" type="image/x-icon" rel="icon"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+	<header>
+		<div class='header'>
+			<div class='header_left'>
+				<a href='index.html'><img data-src='image/logo.svg'/></a>
+			</div>
+			<div class='header_right'>
+				<ul>
+					<a href="recruitment.html"><li>诚聘英才</li></a>
+					<a href='contact.html'><li>征求合作</li></a>
+					<a href='new_show.html' class="header_right_hover"><li>
+						新闻中心
+						<!-- <div class="header_right_list">
+							<span onclick="location.href='new_show.html'">展会</span>
+							<span onclick="location.href='news.html'">新产品</span>
+						</div> -->
+					</li></a>
+					<a href="product.html"><li>产品设备</li></a>
+					<a href='index.html'><li>网站首页</li></a>
+				</ul>
+			</div>
+			<div style='clear: both'></div>
+		</div>
+	</header>
+	<div class='headers'></div>
+	<div class="jf_detail_head">
+	</div>
+	<div class="jf_detail_body">
+		<p>我们的厂区</p>
+		<div class="jf_detail_body_list"></div>
+		<div style="clear: both;"></div>
+	</div>
+	<div class="jf_detail_body">
+		<p>生产设备</p>
+		<div class="jf_detail_body_list"></div>
+		<div style="clear: both;"></div>
+	</div>
+	<div class="jf_detail_body">
+		<p>检验设备</p>
+		<div class="jf_detail_body_list"></div>
+		<div style="clear: both;"></div>
+	</div>
+	<div class="jf_detail_body">
+		<p>荣誉</p>
+		<div class="jf_detail_body_list"></div>
+		<div style="clear: both;"></div>
+	</div>
+	<script type="text/javascript">
+		function d(id){
+			return document.getElementById(id);
+		}
+		function c(cls){
+			return document.getElementsByClassName(cls);
+		}
+		function n(name){
+			return document.getElementsByTagName(name);
+		}
+
+		/*数据资料*/
+		var object = ['激光切割机','CNC加工中心','电镀锌生产线','焊接机器人','30吨~200吨油压折床','45吨~400吨冲床','CNC加工中心','激光切割','电脑冲床','油压折床','冲床','铝材铬化','喷粉'];
+		var objects = ['盐雾试验机','英国[inspect Vision]轮廓检验仪','RoHs检验仪','拉力试验机','纸箱耐破度测试','激光量测','CMM三向坐标量床'];
+		var objectx = ['华为质量奖(包含社会责任)','武汉烽火质量奖','浙江省高新企业','嘉兴市高新技术','华为研发支持奖','2012年日本钣金大赛铜牌','县长质量奖','华为重大项目支持奖'];
+
+		var body_list = c('jf_detail_body_list');
+		/*我们的厂区*/
+		for(var i = 0; i <= 4; i++){
+			var div = document.createElement('div');
+			var img = document.createElement('img');
+			var ii = String(i+1);
+			var iii = ii.padStart(3, "0");
+			img.setAttribute("data-src","image/jf/chang/chang_"+iii+".jpg");
+			div.append(img);
+			body_list[0].append(div);
+		}
+		/*生产设备*/
+		for(var i = 0; i <= 12; i++){
+			var div = document.createElement('div');
+			var img = document.createElement('img');
+			var p = document.createElement('p');
+			var ii = String(i+1);
+			var iii = ii.padStart(3, "0");
+			if(i < 7){
+				img.setAttribute("data-src","image/jf/jf_"+iii+".png");
+			}else{
+				img.setAttribute("data-src","image/jf/jf_"+iii+".jpg");
+			}
+			p.innerHTML = object[i];
+			div.append(img);
+			div.append(p);
+			body_list[1].append(div);
+		}
+		/*检验设备*/
+		for(var i = 0; i <= 6; i++){
+			var div = document.createElement('div');
+			var img = document.createElement('img');
+			var p = document.createElement('p');
+			var ii = String(i+1);
+			var iii = ii.padStart(3, "0");
+			if(i < 2){
+				img.setAttribute("data-src","image/jf/jfs_"+iii+".png");
+			}else{
+				img.setAttribute("data-src","image/jf/jfs_"+iii+".jpg");
+			}
+			p.innerHTML = objects[i];
+			div.append(img);
+			div.append(p);
+			body_list[2].append(div);
+		}
+		/*我们的荣誉*/
+		for(var i = 0; i <= 7; i++){
+			var div = document.createElement('div');
+			var img = document.createElement('img');
+			var ii = String(i+1);
+			var iii = ii.padStart(3, "0");
+			img.setAttribute("data-src","image/jf/jiang/jiang_"+iii+".jpg");
+			div.append(img);
+			body_list[3].append(div);
+		}
+		/*给所有list添加取消浮动影响*/
+		for(var i = 0; i < body_list.length; i++){
+			var div = document.createElement('div');
+			div.style.clear = 'both';
+			body_list[i].append()
+		}
+	</script>
+	<script type="text/javascript" src="js/footer.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
