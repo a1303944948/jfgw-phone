@@ -21,6 +21,17 @@ var bodyH = n('body')[0].offsetHeight;
 var footer = n('footer');
 var header = n('header');
 var home = c('news_home');
+
+/*header部分展开与收起*/
+c('header_menu')[0].ontouchstart = function(){
+	console.log(c('header_right_ul')[0].style.height);
+	if(c('header_right_ul')[0].style.top == "6.1rem"){
+		c('header_right_ul')[0].style.top = '-8.9rem';
+	}else{
+		c('header_right_ul')[0].style.top = '6.1rem';
+	}
+}
+
 /*动态更改页面img与video的src*/
 function no_repeat(){
 	var img = n('img');
