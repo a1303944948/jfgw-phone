@@ -22,6 +22,14 @@ var footer = n('footer');
 var header = n('header');
 var home = c('news_home');
 
+/*header部分公司名称文本居中*/
+var leftWidth = c('header_left')[0].clientWidth;
+var centerWidth = c('header_center')[0].clientWidth;
+var menuWidth = c('header_menu')[0].clientWidth;
+var Header = c('header')[0].clientWidth;
+
+c('header_center')[0].style.marginLeft = (Header - leftWidth - menuWidth - centerWidth)/2 + 'px';
+
 /*header部分展开与收起*/
 c('header_menu')[0].ontouchstart = function(){
 	console.log(c('header_right_ul')[0].style.height);
@@ -267,7 +275,16 @@ list.hover(function(){
 
 /*产品设备*/
 $('.index_product_list>a>span').hide();
-$('.index_product_list>a').hover(function(){
+
+//点击跳转至征求合作
+c('footer_prev_div')[0].onclick = function(){
+	location.href = "contact.html";
+}
+
+if(!(navigator.userAgent.match(/(iPhone|iPod|Android|ios|iOS|iPad|Backerry|WebOS|Symbian|Windows Phone|Phone)/i))){
+	location.href = 'http://www.hontech-rdcenter.com/';
+}
+/*$('.index_product_list>a').hover(function(){
 	var zj = $(this).children('div');
 	zj.css('opacity','1');
 	$(this).children('span').stop().slideDown(300);
@@ -275,4 +292,4 @@ $('.index_product_list>a').hover(function(){
 	var zj = $(this).children('div');
 	zj.css('opacity','0');
 	$(this).children('span').stop().slideUp(300);
-})
+})*/

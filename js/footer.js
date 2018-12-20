@@ -25,17 +25,18 @@ document.writeln("				<div><a href=\'product_details.html?commoid=8\'>薯条机<
 document.writeln("				<a href=\'product_details.html?commoid=9\'>糖果机</a></div>");
 document.writeln("				<p style=\'clear: both;\'></p>");
 document.writeln("			</div>");
-document.writeln("			<div class=\'footerc\'>");
+/*document.writeln("			<div class=\'footerc\'>");
 document.writeln("				<h2>新闻中心</h2>");
 document.writeln("				<a href=\'new_show.html\'>展会</a>");
-document.writeln("			</div>");
-document.writeln("			<div class=\'footerd\'>");
-document.writeln("				<h2>公司讯息</h2>");
-document.writeln("				<a href=\'recruitment.html\'>诚聘英才</a>");
-document.writeln("				<a href=\'contact.html\'>征求合作</a>");
-document.writeln("			</div>");
+document.writeln("			</div>");*/
+/*document.writeln("			<div class=\'footerd\'>");
+document.writeln("				<h2>公司讯息</h2>");*/
+// document.writeln("				<a href=\'recruitment.html\'>诚聘英才</a>");
+//document.writeln("				<a href=\'contact.html\'>征求合作</a>");
+//document.writeln("			</div>");
 document.writeln("			<div class=\'footere\'>");
-document.writeln("				<p>周一至周五 07:50~17:00</p>");
+//document.writeln("				<p>周一至周五 07:50~17:00</p>");
+document.writeln("				<p></p>");
 document.writeln("				<img src=\'image/ewm.jpg\'/>");
 /*document.writeln("				<div class=\'footere_div\'>");
 document.writeln("					<div class=\'footere_div_a\'>");

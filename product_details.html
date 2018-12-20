@@ -18,13 +18,14 @@
 			<div class='header_left'>
 				<a href='index.html' title="自助售货机"><img data-src='image/logo.svg'/></a>
 			</div>
+			<div class='header_center'>浙江嘉丰机电有限公司</div>
 			<div class='header_right'>
 				<ul class="header_right_ul">
-					<a href="index.html"><li>网站首页</li></a>
-					<a href='product.html'><li class='header_right_ul_li'>产品设备</li></a>
-					<a href='new_show.html'><li>新闻中心</li></a>
+					<a href="index.html"><li class='header_right_ul_li'>网站首页</li></a>
+					<a href='product.html'><li>企业信息</li></a>
+					<!-- <a href='new_show.html'><li>新闻中心</li></a> -->
 					<a href='contact.html' title="鸿丰集团官网"><li>征求合作</li></a>
-					<a href='recruitment.html'><li>诚聘英才</li></a>
+					<!-- <a href='recruitment.html'><li>诚聘英才</li></a> -->
 				</ul>
 			</div>
 			<div class="header_menu">
@@ -42,12 +43,13 @@
 		</table>
 		<img class="product_details_home_img"/>
 	</div>
-	<p id="product_details_video_tip" style="text-align: center; color: #21980A;">如果无法自动播放，请按f5刷新页面即可自动播放</p>
+	<p id="product_details_video_tip" style="text-align: center; font-size: 1.4rem; color: #21980A;"></p>
 	<div class="product_details_video">
-		<video id="product_details_video_video" autoplay="autoplay" loop="loop">
-			<!-- <source data-src="image/jn.Ogg" type="video/ogg" />
-  			<source data-src="image/jn.webm" type="video/webm" /> -->
-		</video>
+		<img id="product_details_video_image"/>
+		<!-- <video id="product_details_video_video" autoplay="autoplay" loop="loop">
+			<source data-src="image/jn.Ogg" type="video/ogg" />
+  			<source data-src="image/jn.webm" type="video/webm" />
+		</video> -->
 	</div>
 	<!--<div class="product_details_body">-->
 		<!--<p>当前浏览： 金牛座自助售货机</p>
@@ -175,7 +177,7 @@
 			var video = c('product_details_video')[0].children[0];
 			var homeImg = c('product_details_home_img')[0];
 			var table = c('product_details_home_table')[0];
-			var videoTip = d('product_details_video_tip');
+			//var videoTip = d('product_details_video_tip');
 
 			var data = obj[id];//database.js里面取道的所有数据
 			banner.setAttribute("data-src",data[0].img_view);
@@ -186,11 +188,12 @@
 				homeImg.setAttribute("data-src",data[0].tableImg);
 			}
 			if(data[0].video == ""){
-				videoTip.innerHTML = "该设备没有视频！";
+				video.parentNode.removeChild(video);
+				//videoTip.innerHTML = "该设备没有预览图！";
 			}
-			setTimeout(function(){
+			/*setTimeout(function(){
 				video.playbackRate = 0.5;
-			},200)
+			},200)*/
 			for(var i = 0; i < data[1].length; i++){
 				for(var j = 0; j < data[1][i].length; j++){
 					var tr = document.createElement('tr');

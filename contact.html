@@ -18,13 +18,14 @@
 			<div class='header_left'>
 				<a href='index.html' title="自助售货机"><img data-src='image/logo.svg'/></a>
 			</div>
+			<div class='header_center'>浙江嘉丰机电有限公司</div>
 			<div class='header_right'>
 				<ul class="header_right_ul">
 					<a href="index.html"><li>网站首页</li></a>
-					<a href='product.html'><li>产品设备</li></a>
-					<a href='new_show.html'><li>新闻中心</li></a>
+					<a href='product.html'><li>企业信息</li></a>
+					<!-- <a href='new_show.html'><li>新闻中心</li></a> -->
 					<a href='contact.html' title="鸿丰集团官网"><li class='header_right_ul_li'>征求合作</li></a>
-					<a href='recruitment.html'><li>诚聘英才</li></a>
+					<!-- <a href='recruitment.html'><li>诚聘英才</li></a> -->
 				</ul>
 			</div>
 			<div class="header_menu">
@@ -70,7 +71,7 @@
 		var point = new BMap.Point(120.893569,30.827302); //创建地图的中心点坐标
 
 		map.enableScrollWheelZoom(true);	//开启鼠标滚轮缩放
-		map.centerAndZoom(point, 6);		//地图初始化并且设置地图打开时的初始级别
+		map.centerAndZoom(point, 3);		//地图初始化并且设置地图打开时的初始级别
 
 		map.addControl(new BMap.NavigationControl()); //向地图添加平移缩放
 		//map.addControl(new BMap.OverviewMapControl());//向地图添加缩略地图
@@ -115,8 +116,8 @@
 		}
 
 		//初始化地图按钮
-		c('contact_btn')[0].onclick = function(){		
-			map.centerAndZoom(point, 6);		//地图初始化并且设置地图打开时的初始级别
+		c('contact_btn')[0].onmousedown = function(){		
+			map.centerAndZoom(point, 3);		//地图初始化并且设置地图打开时的初始级别
 			map.openInfoWindow(infoWindow, point);  // 打开信息窗口
 		}
 	</script>

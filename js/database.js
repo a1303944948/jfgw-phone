@@ -1,6 +1,6 @@
 var database = [
 	[
-		{img_view:'image/jnz_view.jpg',video:'image/jn.mp4',tableImg: 'image/jnI.jpg'},
+		{img_view:'image/jnz_view.jpg',video:'image/jn.gif',tableImg: 'image/jnI.jpg'},
 
 		[[{title:'基础信息',name:'品名',text:'金牛座'},
 		{name:'机器型号',text:'VMC0401002'},
@@ -28,7 +28,7 @@ var database = [
 		{name:'后台数据',text:'HONTECH'},
 		{name:'数据库',text:'云服务器'}]]
 	],[
-		{img_view:'image/szz_view.jpg',video:'image/sz.mp4'},
+		{img_view:'image/szz_view.jpg',video:'image/sz.gif'},
 
 		[[{title:'基础信息',name:'品名',text:'双子座'},
 		{name:'机器型号',text:'VMC08855W0'},
@@ -57,7 +57,7 @@ var database = [
 		{name:'后台数据',text:'HONTECH'},
 		{name:'数据库',text:'云服务器'}]]
 	],[
-		{img_view:'image/byz_view.jpg',video:'image/by.mp4'},
+		{img_view:'image/byz_view.jpg',video:'image/by.gif'},
 
 		[[{title:'基础信息',name:'品名',text:'白羊座'},
 		{name:'机器型号',text:'FC02'},
@@ -81,7 +81,7 @@ var database = [
 		{name:'后台数据',text:'HONTECH'},
 		{name:'数据库',text:'云服务器'}]]
 	],[
-		{img_view:'image/zhj_view.jpg',video:'image/zh.mp4'},
+		{img_view:'image/zhj_view.jpg',video:'image/zh.gif'},
 
 		[[{title:'基础信息',name:'品名',text:'综合机'},
 		{name:'机器型号',text:'TF-AX-A5-A-A / TF-AX-B5-A-A'},
@@ -102,7 +102,7 @@ var database = [
 		{name:'数据传输',text:'4G路由器'},
 		{name:'操作系统',text:'Windows7 64位'}]]
 	],[
-		{img_view:'image/ssj_view.jpg',video:'image/ss.mp4'},
+		{img_view:'image/ssj_view.jpg',video:'image/ss.gif'},
 
 		[[{title:'基础信息',name:'品名',text:'熟食机',texts:'饮品机'},
 		{name:'机器型号',text:'HT071',texts:'HT072'},
@@ -130,7 +130,7 @@ var database = [
 		{name:'后台数据',text:'HONTECH',texts:'HONTECH'},
 		{name:'数据库',text:'云服务器',texts:'云服务器'}]]
 	],[
-		{img_view:'image/zbj_view.jpg',video:'image/zb.mp4'},
+		{img_view:'image/zbj_view.jpg',video:'image/zb.gif'},
 
 		[[{title:'基础信息',name:'品名',text:'桌面制冰机'},
 		{name:'机器型号',text:'HT085'},
@@ -156,7 +156,7 @@ var database = [
 		{name:'使用制冷介质',text:'R134a'},
 		{name:'冰块形状',text:'碎冰'}]]
 	],[
-		{img_view:'image/kfj_view.jpg',video:'image/kf.mp4'},
+		{img_view:'image/kfj_view.jpg',video:'image/kf.gif'},
 
 		[[{title:'基础信息',name:'品名',text:'咖啡机'},
 		{name:'机器型号',text:'HT084'},
@@ -183,7 +183,7 @@ var database = [
 		{name:'后台数据',text:'HONTECH'},
 		{name:'数据库',text:'云服务器'}]]
 	],[
-		{img_view:'image/fmm_view.jpg',video:'image/fm.mp4'},
+		{img_view:'image/fmm_view.jpg',video:'image/fm.gif'},
 
 		[[{title:'基础信息',name:'品名',text:'自动售餐机'},
 		{name:'机器型号',text:'VMC05621W4'},
@@ -207,7 +207,7 @@ var database = [
 		{name:'设备安全',text:'摄像头监控 WX151HD 晟悦'},
 		{name:'取物口数量',text:'1个'}]]
 	],[
-		{img_view:'image/stj_view.jpg',video:'image/st.mp4'},
+		{img_view:'image/stj_view.jpg',video:'image/st.gif'},
 
 		[[{title:'基础信息',name:'品名',text:'薯条机'},
 		{name:'机器型号',text:''},
