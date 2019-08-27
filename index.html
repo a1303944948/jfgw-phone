@@ -264,7 +264,7 @@
 					</div>
 				</div>
 			</a>
-			<a href="product_details.html?commoid=7">
+			<!-- <a href="product_details.html?commoid=7">
 				<img data-src="image/fmm.jpg"/>
 				<p>自动售餐机<span></span></p>
 				<span>自动售餐机(冷藏盒饭、水果、沙拉、可自动微波加热)</span>
@@ -278,7 +278,7 @@
 						</ul>
 					</div>
 				</div>
-			</a>
+			</a> -->
 			<a href="product_details.html?commoid=8">
 				<img data-src="image/stj.jpg"/>
 				<p>薯条机<span></span></p>
@@ -367,7 +367,7 @@
 		})*/
 		for(var i = 0; i < c('index_about_video_list').length; i++){
 			(function(q){
-				c('index_about_video_list')[q].children[0].ontouchend = function(){
+				c('index_about_video_list')[q].ontouchend = function(){
 					c('index_about_video_list')[q].children[1].play();
 				}
 			})(i)
